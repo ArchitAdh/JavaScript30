@@ -2,6 +2,7 @@
 //add mouse key event
 //change bg to drum set and associate key press with the item in image
 // try removing playing class using css variables in css transition and js
+//? a test code
 
 const playSound = (e) => {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
