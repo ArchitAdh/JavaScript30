@@ -20,7 +20,6 @@ const playSoundOnClick = (keyCode) => {
   playSoundHelper(audio, key);
 };
 
-
 // Play sound on keyPress
 window.addEventListener("keydown", playSoundOnKeyPress);
 
