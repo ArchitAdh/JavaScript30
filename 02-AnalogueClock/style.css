@@ -31,7 +31,19 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: translateY(-3px); /* account for the height of the clock hands */
+  transform: translateY(-3px); /* accounts for the height of the clock hands */
+}
+
+/*  */
+.clock-face::after {
+  content: "";
+  border: 8px solid white;
+  /* outline: 2px solid #000; */
+  opacity: 95%;
+  border-radius: 50%;
+  position: absolute;
+  top: 145px;
+  left: 142px;
 }
 
 .hand {
@@ -40,4 +52,32 @@ body {
   background: black;
   position: absolute;
   top: 50%;
+
+  transform-origin: 100%;
+  /* changes the pivot of rotation in x-axis; by default it's in 50% ; 100% pushes the pivot to the extreme right*/
+
+  transform: rotate(90deg);
+  /* to set default hand at 12 */
+
+  /* transition: all 0.5s; */
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.57, 1);
 }
+
+.second-hand {
+  transform: rotate(0deg);
+  background: violet;
+}
+
+.hour-hand {
+  transform: rotate(90deg);
+  background: blue;
+}
+
+.min-hand {
+  transform: rotate(180deg);
+  background: indigo;
+}
+
+/* .seconds-hand {
+  transform: rotate(270deg);
+} */
