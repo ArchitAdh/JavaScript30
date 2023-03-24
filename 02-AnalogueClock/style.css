@@ -25,6 +25,11 @@ body {
   padding: 2rem;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
     inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+  background: url(./clockFace.png.png);
+  background-size: contain;
+  /* background-size: auto; */
+  background-position: 8px 8px;
+  background-repeat: no-repeat;
 }
 
 .clock-face {
