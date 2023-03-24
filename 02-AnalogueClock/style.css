@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-size: 2rem;
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   min-height: 100vh;
   align-items: center;
 }
@@ -37,47 +37,73 @@ body {
 /*  */
 .clock-face::after {
   content: "";
-  border: 8px solid white;
-  /* outline: 2px solid #000; */
-  opacity: 95%;
+  border: 10px solid #af312f;
   border-radius: 50%;
   position: absolute;
-  top: 145px;
-  left: 142px;
+  top: 133px;
+  left: 134px;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
 }
 
 .hand {
-  width: 50%;
-  height: 6px;
-  background: black;
   position: absolute;
-  top: 50%;
+  top: 0;
+  left: 47%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5px 15rem 5px;
+  border-color: transparent transparent black transparent;
+  transform-origin: bottom;
+}
 
-  transform-origin: 100%;
-  /* changes the pivot of rotation in x-axis; by default it's in 50% ; 100% pushes the pivot to the extreme right*/
+/* for two dots */
+.hand::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
 
-  transform: rotate(90deg);
-  /* to set default hand at 12 */
-
-  /* transition: all 0.5s; */
-  transition-timing-function: cubic-bezier(0.1, 2.7, 0.57, 1);
+.hand::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -25px;
+  left: -5px;
 }
 
 .second-hand {
-  transform: rotate(0deg);
-  background: violet;
+  border-width: 0 4px 15rem 4px;
+  border-color: transparent transparent #af312f transparent;
+  top: 0px;
+  left: 50%;
 }
 
+.second-hand::after {
+  display: none;
+}
+.second-hand::before {
+  display: none;
+}
 .hour-hand {
-  transform: rotate(90deg);
-  background: blue;
+  border-width: 0px 8px 10rem 8px;
+  top: 52px;
 }
 
 .min-hand {
-  transform: rotate(180deg);
-  background: indigo;
+  border-width: 0 6px 13rem 6px;
+  top: 23px;
 }
-
-/* .seconds-hand {
-  transform: rotate(270deg);
-} */
